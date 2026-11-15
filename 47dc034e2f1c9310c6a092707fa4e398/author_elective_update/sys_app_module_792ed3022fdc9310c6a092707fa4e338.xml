@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="TS Application ">192e57022fdc9310c6a092707fa4e362</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <karuna_route/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Folder</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_2131768_timesh_0_timesheet_main</name>
+        <order>100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles/>
+        <route/>
+        <screen/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-03 16:59:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>792ed3022fdc9310c6a092707fa4e338</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>TS</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Timesheet App" source="x_2131768_timesh_0">47dc034e2f1c9310c6a092707fa4e398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Timesheet App">47dc034e2f1c9310c6a092707fa4e398</sys_scope>
+        <sys_update_name>sys_app_module_792ed3022fdc9310c6a092707fa4e338</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-03 17:04:45</sys_updated_on>
+        <timeline_page/>
+        <title>TS</title>
+        <uncancelable>false</uncancelable>
+        <ux_list/>
+        <view_name>Time sheet</view_name>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Timesheet App">47dc034e2f1c9310c6a092707fa4e398</application>
+        <file_path/>
+        <instance_id>46e79fa7fbf5c350363cf633beefdc18</instance_id>
+        <instance_name>dev425771</instance_name>
+        <merge_base/>
+        <name>sys_app_module_792ed3022fdc9310c6a092707fa4e338</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="TS Application ">192e57022fdc9310c6a092707fa4e362</application><assessment/><device_type/><filter/><hint/><homepage/><image/><karuna_route/><link_type>LIST</link_type><map_page/><mobile_title>Folder</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_2131768_timesh_0_timesheet_main</name><order>100</order><override_menu_roles>false</override_menu_roles><query/><report/><require_confirmation>true</require_confirmation><roles/><route/><screen/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-03 16:59:39</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>792ed3022fdc9310c6a092707fa4e338</sys_id><sys_mod_count>3</sys_mod_count><sys_name>TS</sys_name><sys_overrides/><sys_package display_value="Timesheet App" source="x_2131768_timesh_0">47dc034e2f1c9310c6a092707fa4e398</sys_package><sys_policy/><sys_scope display_value="Timesheet App">47dc034e2f1c9310c6a092707fa4e398</sys_scope><sys_update_name>sys_app_module_792ed3022fdc9310c6a092707fa4e338</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-03 17:04:45</sys_updated_on><timeline_page/><title>TS</title><uncancelable>false</uncancelable><ux_list/><view_name>Time sheet</view_name><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-2105030364</payload_hash>
+        <record_name>TS</record_name>
+        <reverted_from/>
+        <source>83dc034e2f1c9310c6a092707fa4e39f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-03 17:04:45</sys_created_on>
+        <sys_id>becfdbc22fdc9310c6a092707fa4e302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1a25ed3550000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-03 17:04:45</sys_updated_on>
+        <type>Module</type>
+        <update_guid>7acfdbc2a2dc93105f4f5d702ceab901</update_guid>
+        <update_guid_history>7acfdbc2a2dc93105f4f5d702ceab901:-2105030364,4e4f9b82e7dc93103dbdb9bfaece4b30:-560273617,a03fd782aedc9310fd38af4b0fc9f431:1856140945,c0aed3020bdc93107186cffd9df3da72:1273306317</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="TS">7f00e7822fdc9310c6a092707fa4e3da</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-03 17:05:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>0b756ffc1e41477494dd104388225bc9</sys_id>
+        <sys_metadata>792ed3022fdc9310c6a092707fa4e338</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TS</sys_name>
+        <sys_package display_value="Timesheet App" source="x_2131768_timesh_0">47dc034e2f1c9310c6a092707fa4e398</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Timesheet App">47dc034e2f1c9310c6a092707fa4e398</sys_scope>
+        <sys_scope_delete display_value="">38d465a7ac7f4a52af7514da473eb591</sys_scope_delete>
+        <sys_update_name>sys_app_module_792ed3022fdc9310c6a092707fa4e338</sys_update_name>
+        <sys_update_version display_value="sys_app_module_792ed3022fdc9310c6a092707fa4e338">becfdbc22fdc9310c6a092707fa4e302</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-03 17:05:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

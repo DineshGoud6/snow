@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="6a429bc62f5c9310c6a092707fa4e365" label="TS_tasks" max_length="40" name="x_2131768_timesh_0_ts_tasks" type="collection">
+        <element default="0.0" label="Efforts" max_length="38" name="efforts" type="decimal"/>
+        <element display="true" label="Timesheet" max_length="32" name="timesheet" reference="x_2131768_timesh_0_timesheet_main" type="reference"/>
+        <element label="Tasks" mandatory="true" max_length="32" name="tasks" reference="task" type="reference"/>
+        <index name="index">
+            <element name="tasks"/>
+        </index>
+        <index name="index2">
+            <element name="timesheet"/>
+        </index>
+    </element>
+</database>

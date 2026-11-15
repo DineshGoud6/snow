@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>GetEmployees</name>
+        <operation_script><![CDATA[
+(function process(request, response) {
+
+    var query = request.queryParams.query || '';
+
+    var users = [];
+    var gr = new GlideRecordSecure('sys_user');
+
+    // Return only active employees
+    gr.addQuery('active', true);
+
+    // Search by employee name
+    if (query) {
+        gr.addQuery('name', 'CONTAINS', query);
+    }
+
+    gr.orderBy('name');
+    gr.setLimit(100);
+    gr.query();
+
+    while (gr.next()) {
+
+        users.push({
+            user_sys_id: gr.getUniqueValue(),
+            name: gr.getValue('name')
+        });
+
+    }
+
+    response.setStatus(200);
+
+    response.setBody({
+        result: {
+            success: true,
+            data: {
+                users: users
+            }
+        }
+    });
+
+})(request, response);
+]]></operation_script>
+        <operation_uri>/api/x_2131768_timesh_0/timesheet_integration/users</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/users</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-03 19:05:20</sys_created_on>
+        <sys_id>311b37c62f90d310c6a092707fa4e332</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>GetEmployees</sys_name>
+        <sys_package display_value="Timesheet App" source="x_2131768_timesh_0">47dc034e2f1c9310c6a092707fa4e398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Timesheet App">47dc034e2f1c9310c6a092707fa4e398</sys_scope>
+        <sys_update_name>sys_ws_operation_311b37c62f90d310c6a092707fa4e332</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-04 11:22:55</sys_updated_on>
+        <web_service_definition display_value="Timesheet_Integration">d5673b022f90d310c6a092707fa4e34e</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

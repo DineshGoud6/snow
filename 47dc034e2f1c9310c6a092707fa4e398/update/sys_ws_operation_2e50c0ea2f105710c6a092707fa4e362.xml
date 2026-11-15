@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Daily Timesheet Entiries</name>
+        <operation_script><![CDATA[(function process(request, response) {
+
+    var timesheetSysId = request.pathParams.daily_timesheet_sys_id;
+
+    if (!timesheetSysId || !/^[0-9a-f]{32}$/i.test(timesheetSysId)) {
+        response.setStatus(400);
+        response.setBody({
+            result: {
+                success: false,
+                message: "A valid daily_timesheet_sys_id is required"
+            }
+        });
+        return;
+    }
+
+    // Verify that the daily timesheet header exists
+    var header = new GlideRecordSecure(
+        'x_2131768_timesh_0_timesheet_main'
+    );
+
+    if (!header.get(timesheetSysId)) {
+        response.setStatus(404);
+        response.setBody({
+            result: {
+                success: false,
+                message: "Daily timesheet not found"
+            }
+        });
+        return;
+    }
+
+    // Retrieve child task entries
+    var gr = new GlideRecordSecure(
+        'x_2131768_timesh_0_ts_tasks'
+    );
+
+    gr.addQuery('timesheet', timesheetSysId);
+    gr.query();
+
+    var entries = [];
+
+    while (gr.next()) {
+        entries.push({
+            entry_sys_id: gr.getUniqueValue(),
+            task_sys_id: gr.getValue('tasks'),
+            task_name: gr.getDisplayValue('tasks'),
+            efforts: gr.getValue('efforts')
+        });
+    }
+
+    response.setStatus(200);
+    response.setBody({
+        result: {
+            success: true,
+            data: {
+                time_entries: entries,
+                entries_loaded: true
+            }
+        }
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2131768_timesh_0/timesheet_integration/{daily_timesheet_sys_id}/entries</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/{daily_timesheet_sys_id}/entries</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-04 14:07:35</sys_created_on>
+        <sys_id>2e50c0ea2f105710c6a092707fa4e362</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Get Daily Timesheet Entiries</sys_name>
+        <sys_package display_value="Timesheet App" source="x_2131768_timesh_0">47dc034e2f1c9310c6a092707fa4e398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Timesheet App">47dc034e2f1c9310c6a092707fa4e398</sys_scope>
+        <sys_update_name>sys_ws_operation_2e50c0ea2f105710c6a092707fa4e362</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-04 14:08:40</sys_updated_on>
+        <web_service_definition display_value="Timesheet_Integration">d5673b022f90d310c6a092707fa4e34e</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
